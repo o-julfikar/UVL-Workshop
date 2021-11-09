@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign In | UVL Workshop</title>
+    <link rel="icon" href="logo.ico" sizes="16x16">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="logo" onclick="home()">
+        <img class="logo-pic" src="logo.png" alt="Logo of UVL Workshop">
+        <h1>UVL Workshop</h1>
+    </div>
+    <div class="container">
+        <div class="login-box">
+            <input type="text" placeholder="Full Name" id="txt-name">
+            <input type="email" placeholder="Email" id="txt-email">
+            <input type="password" placeholder="Password" id="txt-pass">
+            <input type="password" placeholder="Confirm Password" id="txt-confirm-pass">
+            <input type="tel" placeholder="Phone" id="txt-phone">
+            <input type="text" placeholder="Address" id="txt-address">
+            <div class="rl-box">
+                <button type="button" id="btn-go" onclick="register()">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="login.js"></script>
+<script src="common.js"></script>
+
+</body>
+</html>

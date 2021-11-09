@@ -1,0 +1,71 @@
+.appointment-container {
+    width: 80%;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    background: floralwhite;
+}
+
+.appointment-container table {
+    width: 100%;
+    padding: 20px;
+}
+
+.appointment-container > .btn-delete {
+    float: right;
+    background: indianred;
+    border-radius: 0 20px 0 10px;
+    padding: 0px 30px;
+}
+
+.appointment-container > .btn-edit {
+    width: 100%;
+    padding: 10px 0px;
+    background: darkseagreen;
+    border-radius: 0px 0px 20px 20px;
+}
+
+.appointment-container button {
+    border: none;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    transition: 0.3s;
+}
+
+.appointment-container button:hover {
+    cursor: pointer;
+}
+
+.appointment-container > .btn-delete:hover {
+    background: darkred;
+}
+
+.appointment-container > .btn-edit:hover {
+    background: seagreen;
+}
+
+.appointment-container > .btn-delete:active {
+    background: palevioletred;
+}
+
+.appointment-container > .btn-edit:active {
+    background: mediumseagreen;
+}
+
+.appointment-container table tbody tr td {
+    font-size: larger;
+}
+
+.appointment-container table thead tr td {
+    font-size: xx-large;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.appointment-container p {
+    color: darkgray;
+    padding: 10px;
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+}
