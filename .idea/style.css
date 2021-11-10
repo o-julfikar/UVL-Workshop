@@ -73,4 +73,9 @@ body {
     color: black;
     font-size: x-large;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: mediumseagreen;
 }

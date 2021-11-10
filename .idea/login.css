@@ -15,7 +15,7 @@
 
 .login-box input {
     border: 2px solid #8fe394;
-    border-radius: 30px;
+    border-radius: 20px;
     font-size: 2vw;
     margin: 10px 0;
     padding: 10px 30px;
@@ -38,7 +38,7 @@
 }
 
 .rl-box button {
-    border-radius: 30px;
+    border-radius: 20px;
     font-size: 2vw;
     font-weight: bold;
     background: transparent;

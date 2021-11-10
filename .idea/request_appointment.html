@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home | UVL Workshop</title>
+    <link rel="icon" href="logo.ico" sizes="16x16">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="main-container">
+
+    <div class="navbar">
+        <ul>
+            <li>
+                <div class="logo" onclick="home()">
+                    <img class="logo-pic" src="logo.png" alt="Logo of UVL Workshop">
+                    <h1>UVL Workshop</h1>
+                </div>
+            </li>
+            <li><a href="" >Mohammad Zulfikar</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="new-appointment-box">
+            <p>Name:</p>
+            <input type="text" id="txt-name">
+            <p>Address:</p>
+            <select>
+                <option>Add new address</option>
+            </select>
+            <p></p>
+            <textarea placeholder="Address"></textarea>
+            <p>Phone:</p>
+            <input type="tel" id="txt-phone">
+            <p>Car License Number:</p>
+            <select>
+                <option>Add new car</option>
+            </select>
+            <p></p>
+            <input type="text" id="txt-car-license">
+            <p>Engine Number:</p>
+            <select>
+                <option>Add new engine</option>
+            </select>
+            <p></p>
+            <input type="text" id="txt-engine-number">
+            <p>Appointment Date:</p>
+            <input type="date" id="txt-appointment-date">
+            <p>Mechanic</p>
+            <select>
+                <option>Choose your prefered mechanic</option>
+            </select>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    function edit() {
+        open("index2.html", "_self");
+    }
+</script>
+
+<script src="common.js"></script>
+
+</body>
+</html>
