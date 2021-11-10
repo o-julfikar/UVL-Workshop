@@ -9,3 +9,7 @@ function openAppointmentForm() {
 function delete_appointment() {
     open("index2.html", "_self");
 }
+
+function openAdminPanel() {
+    open("admin.html", "_self");
+}

@@ -15,8 +15,8 @@
 
 .login-box input {
     border: 2px solid #8fe394;
-    border-radius: 20px;
-    font-size: 2vw;
+    border-radius: 10px;
+    font-size: 1.5vw;
     margin: 10px 0;
     padding: 10px 30px;
     text-align: center;
@@ -38,8 +38,8 @@
 }
 
 .rl-box button {
-    border-radius: 20px;
-    font-size: 2vw;
+    border-radius: 10px;
+    font-size: 1.5vw;
     font-weight: bold;
     background: transparent;
     width: 100%;
