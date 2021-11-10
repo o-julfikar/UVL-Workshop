@@ -5,3 +5,7 @@ function home() {
 function openAppointmentForm() {
     open("request_appointment.html", "_self");
 }
+
+function delete_appointment() {
+    open("index2.html", "_self");
+}

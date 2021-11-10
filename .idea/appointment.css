@@ -1,0 +1,79 @@
+.new-appointment-box {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    align-items: center;
+}
+
+.appt-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.new-appointment-box p,
+.new-appointment-box input,
+.new-appointment-box select,
+.new-appointment-box textarea,
+.new-appointment-box button {
+    font-size: larger;
+    padding: 10px;
+}
+
+.appt-row input,
+.appt-row select {
+    margin: 10px 0px;
+}
+
+.new-appointment-box input,
+.new-appointment-box select {
+    border: 1px solid #616161;
+    outline: none;
+}
+
+.appt-buttons {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: row;
+}
+
+.appt-buttons button {
+    width: 100%;
+}
+
+.appt-buttons button:first-child {
+    margin-right: 5px;
+    border: 1px solid indianred;
+    color: indianred;
+}
+
+.appt-buttons button:last-child {
+    margin-left: 5px;
+    border: 1px solid seagreen;
+    color: seagreen;
+}
+
+.appt-buttons button:first-child:hover {
+    background: indianred;
+    color: white;
+    cursor: pointer;
+}
+
+.appt-buttons button:last-child:hover {
+    background: seagreen;
+    color: white;
+    cursor: pointer;
+}
+
+.appt-buttons button:first-child:active {
+    background: #e78080;
+    color: white;
+    border: 1px solid #e78080;
+}
+
+.appt-buttons button:last-child:active {
+    background: mediumseagreen;
+    color: white;
+    border: 1px solid mediumseagreen;
+}
+

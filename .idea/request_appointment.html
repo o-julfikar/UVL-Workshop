@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Home | UVL Workshop</title>
+    <title>Request for New Appointment | UVL Workshop</title>
     <link rel="icon" href="logo.ico" sizes="16x16">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="appointment.css">
 </head>
 <body>
 
@@ -27,33 +27,35 @@
     <div class="container">
         <div class="new-appointment-box">
             <p>Name:</p>
-            <input type="text" id="txt-name">
+            <input type="text" id="txt-name" placeholder="Name">
             <p>Address:</p>
-            <select>
-                <option>Add new address</option>
-            </select>
-            <p></p>
-            <textarea placeholder="Address"></textarea>
+            <div class="appt-row">
+                <select>
+                    <option>Add new address</option>
+                    <textarea placeholder="Address"></textarea>
+                </select>
+            </div>
             <p>Phone:</p>
-            <input type="tel" id="txt-phone">
+            <input type="tel" id="txt-phone" placeholder="Phone">
             <p>Car License Number:</p>
-            <select>
-                <option>Add new car</option>
-            </select>
-            <p></p>
-            <input type="text" id="txt-car-license">
+            <div class="appt-row">
+                <select>
+                    <option>Add new car</option>
+                    <input type="text" id="txt-car-license" placeholder="License Number">
+                </select>
+            </div>
             <p>Engine Number:</p>
-            <select>
-                <option>Add new engine</option>
-            </select>
-            <p></p>
-            <input type="text" id="txt-engine-number">
+            <input type="text" id="txt-engine-number" placeholder="Engine Number">
             <p>Appointment Date:</p>
             <input type="date" id="txt-appointment-date">
             <p>Mechanic</p>
             <select>
                 <option>Choose your prefered mechanic</option>
             </select>
+            <div class="appt-buttons">
+                <button type="button" onclick="delete_appointment()">Cancel</button>
+                <button type="button" onclick="home()">Apply</button>
+            </div>
         </div>
     </div>
 

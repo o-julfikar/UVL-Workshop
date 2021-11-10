@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel | UVL Workshop</title>
+    <link rel="icon" href="logo.ico" sizes="16x16">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="main-container">
+
+    <div class="navbar">
+        <ul>
+            <li>
+                <div class="logo" onclick="home()">
+                    <img class="logo-pic" src="logo.png" alt="Logo of UVL Workshop">
+                    <h1>UVL Workshop</h1>
+                </div>
+            </li>
+            <li><a href="" >Mohammad Zulfikar</a></li>
+            <li><a href="login.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <div class="appointment-container">
+            <button type="button" class="btn-delete" onclick="delete_appointment()">X</button>
+            <table>
+                <thead>
+                <tr>
+                    <td colspan="2">Appointment</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="appoint-labl">Date</td>
+                    <td class="appoint-val" id="txt-appoint-date">01/01/2022</td>
+                </tr>
+                <tr>
+                    <td class="appoint-labl">Mechanic</td>
+                    <td class="appoint-val" id="txt-appoint-date">Abu Hasnayeen Zillanee</td>
+                </tr>
+                </tbody>
+            </table>
+            <button type="button" class="btn-edit">Edit</button>
+        </div>
+    </div>
+
+</div>
+
+<script src="common.js"></script>
+
+</body>
+</html>
