@@ -10,10 +10,9 @@
 
 
     $sql_get_uid = "SELECT user_id FROM user WHERE user_email = '$email';";
-    mysqli_query($conn, $sql_insert_user);
     $result_uid = mysqli_query($conn, $sql_get_uid);
 
-    if (mysqli_num_rows($result_uid) == 0) {
+    if (mysqli_num_rows($result_uid) > 0) {
         echo "User already exist";
         return;
     }

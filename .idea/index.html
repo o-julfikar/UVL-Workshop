@@ -6,6 +6,7 @@
     <link rel="icon" href="logo.ico" sizes="16x16">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
+    <script src="verify_login.js"></script>
 </head>
 <body>
 
@@ -25,32 +26,39 @@
         </div>
 
         <div class="container">
-            <div class="appointment-container">
-                <button type="button" class="btn-delete" onclick="delete_appointment()">X</button>
-                <table>
-                    <thead>
+            <div class="sub-container">
+                <div class="appointment-container" id="cont-appt">
+                    <button type="button" class="btn-delete" onclick="delete_appointment()">X</button>
+                    <table>
+                        <thead>
                         <tr>
                             <td colspan="2">Appointment</td>
                         </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td class="appoint-labl">Date</td>
-                        <td class="appoint-val" id="txt-appoint-date">01/01/2022</td>
-                    </tr>
-                    <tr>
-                        <td class="appoint-labl">Mechanic</td>
-                        <td class="appoint-val" id="txt-appoint-date">Abu Hasnayeen Zillanee</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <button type="button" class="btn-edit" onclick="openAppointmentForm()">Edit</button>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="appoint-labl">Date</td>
+                            <td class="appoint-val" id="txt-appoint-date">01/01/2022</td>
+                        </tr>
+                        <tr>
+                            <td class="appoint-labl">Mechanic</td>
+                            <td class="appoint-val" id="txt-mechanic-name">Abu Hasnayeen Zillanee</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button type="button" class="btn-edit" onclick="openAppointmentForm()">Edit</button>
+                </div>
+                <div class="appointment-container-unavailable" id="cont-appt-empty">
+                    <p>There are no available appointments</p>
+                    <button type="button" class="btn-edit" onclick="openAppointmentForm()">Request for new appointment</button>
+                </div>
             </div>
         </div>
 
     </div>
 
     <script src="common.js"></script>
+    <script src="index.js"></script>
 
 </body>
 </html>

@@ -26,8 +26,9 @@ function verifyLogin() {
 
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
-        loginValid = this.responseText;
-        if (loginValid == "1") {
+        loginValid = this.responseText.split("<br>");
+        if (loginValid[0] == "1") {
+            setCookie('uid', loginValid[1], 30);
             open("index.html", "_self");
         } else {
             var txtInvalidLogin = document.getElementById("txt-invalid-login");
@@ -41,11 +42,28 @@ function verifyLogin() {
 }
 
 function getEmailFromURL() {
-    alert("hello")
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const cemail = urlParams.get("email");
 
     var txtEmail = document.getElementById("txt-email");
     txtEmail.value = cemail;
+}
+
+function setCookie(key, value, expiry) {
+    const date = new Date();
+    date.setTime(date.getTime() + (expiry * 24 * 60 * 60 * 1000));
+    let expires = "expires=" + date.toUTCString();
+    document.cookie = key + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(key) {
+    let cookieDb = document.cookie.split(";")
+    for (let i = 0; i < cookieDb.length; i++) {
+        let cookie = cookieDb[i].trim();
+        if (cookie.startsWith(key)) {
+            return cookie.substring(key.length + 1);
+        }
+    }
+    return "";
 }

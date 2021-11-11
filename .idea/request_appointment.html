@@ -6,6 +6,7 @@
     <link rel="icon" href="logo.ico" sizes="16x16">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="appointment.css">
+    <script src="verify_login.js"></script>
 </head>
 <body>
 
@@ -30,26 +31,26 @@
             <input type="text" id="txt-name" placeholder="Name">
             <p>Address:</p>
             <div class="appt-row">
-                <select>
+                <select id="cbo-address">
                     <option>Add new address</option>
-                    <textarea placeholder="Address"></textarea>
+                    <textarea placeholder="Address" id="txt-address"></textarea>
                 </select>
             </div>
             <p>Phone:</p>
             <input type="tel" id="txt-phone" placeholder="Phone">
             <p>Car License Number:</p>
             <div class="appt-row">
-                <select>
+                <select id="cbo-car">
                     <option>Add new car</option>
-                    <input type="text" id="txt-car-license" placeholder="License Number">
+                    <input type="text" id="txt-car" placeholder="License Number">
                 </select>
             </div>
             <p>Engine Number:</p>
-            <input type="text" id="txt-engine-number" placeholder="Engine Number">
+            <input type="text" id="txt-engine" placeholder="Engine Number">
             <p>Appointment Date:</p>
-            <input type="date" id="txt-appointment-date">
+            <input type="date" id="txt-appt-date">
             <p>Mechanic</p>
-            <select>
+            <select id="cbo-mechanic">
                 <option>Choose your prefered mechanic</option>
             </select>
             <div class="appt-buttons">
@@ -60,15 +61,8 @@
     </div>
 
 </div>
-
-
-<script>
-    function edit() {
-        open("index2.html", "_self");
-    }
-</script>
-
 <script src="common.js"></script>
+<script src="appt.js"></script>
 
 </body>
 </html>
