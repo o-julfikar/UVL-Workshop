@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
 <div class="main-container">
     <div class="logo" onclick="home()">
@@ -15,22 +16,21 @@
     </div>
     <div class="container">
         <div class="login-box">
-            <input type="text" placeholder="Full Name" id="txt-name">
             <input type="email" placeholder="Email" id="txt-email">
-            <input type="password" placeholder="Password" id="txt-pass" autocomplete="new-password">
-            <input type="password" placeholder="Confirm Password" id="txt-confirm-pass" autocomplete="new-password">
-            <input type="tel" placeholder="Phone" id="txt-phone">
-            <input type="text" placeholder="Address" id="txt-address">
+            <input type="password" placeholder="Password" id="txt-pass">
+            <p class="invalid-login" id="txt-invalid-login">The email and password did not matched</p>
             <div class="rl-box">
-                <button type="button" id="btn-go" onclick="register()">Register</button>
+                <button type="button" id="btn-go" onclick="verifyLogin()">Sign In</button>
             </div>
         </div>
     </div>
 </div>
 
 <script src="login.js"></script>
-<script src="common.js"></script>
-<script src="register.js"></script>
+<script src="common.js">
+    getEmailFromURL();
+    alert("hello");
+</script>
 
 </body>
 </html>

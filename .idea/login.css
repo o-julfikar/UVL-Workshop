@@ -64,3 +64,20 @@
 #txt-pass {
     display: block;
 }
+
+.invalid-login {
+    display: none;
+    color: red;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        padding-left: 30px;
+    }
+
+    to {
+        opacity: 1;
+        padding-left: 0px;
+    }
+}

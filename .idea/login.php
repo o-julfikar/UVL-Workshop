@@ -1,5 +1,4 @@
 <?php
-
     include_once "connect.php";
     $email = $_REQUEST["email"];
     $pass = $_REQUEST["pass"];
