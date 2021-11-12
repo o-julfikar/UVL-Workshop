@@ -1,5 +1,6 @@
 html {
     min-height: 100%;
+    height: 100%;
 }
 
 body {
@@ -68,7 +69,8 @@ body {
     /*background: mediumspringgreen;*/
 }
 
-.navbar ul li a {
+.navbar ul li a,
+.txt-logout {
     text-decoration: none;
     color: black;
     font-size: x-large;
@@ -76,6 +78,8 @@ body {
     transition: 0.3s;
 }
 
-.navbar ul li a:hover {
+.navbar ul li a:hover,
+.txt-logout:hover {
     color: mediumseagreen;
+    cursor: pointer;
 }

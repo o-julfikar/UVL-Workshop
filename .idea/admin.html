@@ -14,20 +14,21 @@
     <div class="navbar">
         <ul>
             <li>
-                <div class="logo" onclick="home()">
+                <div class="logo" onclick="">
                     <img class="logo-pic" src="logo.png" alt="Logo of UVL Workshop">
                     <h1>UVL Workshop</h1>
                 </div>
             </li>
-            <li><a href="admin.html" >Mohammad Zulfikar</a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href=""  id="logged-username"></a></li>
+            <li><p class="txt-logout" onclick="logout()">Logout</p></li>
         </ul>
     </div>
 
     <div class="container">
         <div class="admin-container">
+            <h1 align="center">Admin Panel</h1>
             <div class="table-container">
-                <table>
+                <table id="appt-table">
                     <thead>
 
                     <tr>
@@ -37,8 +38,7 @@
                         <th>Car License Number</th>
                         <th>Engine Number</th>
                         <th>Appointment Date</th>
-                        <th>Mechanic ID</th>
-                        <th>Mechanic Name</th>
+                        <th>Mechanic</th>
                         <th></th>
                     </tr>
 
@@ -46,420 +46,14 @@
 
                     <tbody>
 
-                    <tr>
-                        <td>1</td>
-                        <td>Tony</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-04-01"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option selected>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Nasrin Akter</td>
-                        <td><button type="button" class="delete-button">Delete</button></td>
-                    </tr>
 
-                    <tr>
-                        <td>2</td>
-                        <td>Sea</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-11-19"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option selected>3</option>
-                        </select></td>
-                        <td>Md. Shahriyar Hossain</td>
-                        <td><button type="button" type="button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>It's Chess</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-08-21"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Aknur Kamal Akib</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Piyaz</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-05-11"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option selected>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>MD. IMTIAZ BHUIYAN</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tony</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-04-01"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option selected>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Nasrin Akter</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Sea</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-11-19"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option selected>3</option>
-                        </select></td>
-                        <td>Md. Shahriyar Hossain</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>It's Chess</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-08-21"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Aknur Kamal Akib</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Piyaz</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-05-11"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option selected>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>MD. IMTIAZ BHUIYAN</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tony</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-04-01"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option selected>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Nasrin Akter</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Sea</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-11-19"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option selected>3</option>
-                        </select></td>
-                        <td>Md. Shahriyar Hossain</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>It's Chess</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-08-21"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Aknur Kamal Akib</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Piyaz</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-05-11"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option selected>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>MD. IMTIAZ BHUIYAN</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tony</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-04-01"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option selected>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Nasrin Akter</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Sea</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-11-19"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option selected>3</option>
-                        </select></td>
-                        <td>Md. Shahriyar Hossain</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>It's Chess</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-08-21"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Aknur Kamal Akib</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Piyaz</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-05-11"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option selected>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>MD. IMTIAZ BHUIYAN</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tony</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-04-01"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option selected>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Nasrin Akter</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Sea</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-11-19"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option selected>3</option>
-                        </select></td>
-                        <td>Md. Shahriyar Hossain</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>It's Chess</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-08-21"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Aknur Kamal Akib</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Piyaz</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-05-11"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option selected>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>MD. IMTIAZ BHUIYAN</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>1</td>
-                        <td>Tony</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-04-01"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option selected>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Nasrin Akter</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>2</td>
-                        <td>Sea</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-11-19"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option>2</option>
-                            <option selected>3</option>
-                        </select></td>
-                        <td>Md. Shahriyar Hossain</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>3</td>
-                        <td>It's Chess</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-08-21"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option selected>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>Aknur Kamal Akib</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
-
-                    <tr>
-                        <td>4</td>
-                        <td>Piyaz</td>
-                        <td>123</td>
-                        <td>Free</td>
-                        <td>Citizen</td>
-                        <td><input type="date" value="2021-05-11"></td>
-                        <td><select id="cbo-mechanic-id">
-                            <option>0</option>
-                            <option>1</option>
-                            <option selected>2</option>
-                            <option>3</option>
-                        </select></td>
-                        <td>MD. IMTIAZ BHUIYAN</td>
-                        <td><button type="button" class="delete-button" class="delete-button">Delete</button></td>
-                    </tr>
 
                     </tbody>
                 </table>
             </div>
             <div class="button-container">
-                <button class="reset-button">Reset</button>
-                <button class="save-button">Save</button>
+                <button class="reset-button" onclick="loadData()">Reset</button>
+                <button class="save-button" onclick="applyChanges()">Save</button>
             </div>
         </div>
     </div>
@@ -468,6 +62,8 @@
 
 <script src="common.js"></script>
 <script src="verify_login.js"></script>
+<script src="login.js"></script>
+<script src="admin.js"></script>
 
 </body>
 </html>

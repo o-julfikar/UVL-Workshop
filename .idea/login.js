@@ -41,6 +41,11 @@ function verifyLogin() {
     xmlhttp.send();
 }
 
+function logout() {
+    setCookie("uid", "None", 1);
+    open("login.html", "_self");
+}
+
 function getEmailFromURL() {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -67,3 +72,5 @@ function getCookie(key) {
     }
     return "";
 }
+
+getEmailFromURL();

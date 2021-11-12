@@ -1,4 +1,4 @@
-var txtName, txtPhone, cboAddress, txtAddress, cboCar, txtCar, txtApptDate, cboMechanic, btnCancel, btnApply;
+var txtName, txtPhone, cboAddress, txtAddress, cboCar, txtCar, txtEngine, txtApptDate, cboMechanic, btnCancel, btnApply;
 
 function initializeFields() {
     txtName = document.getElementById("txt-name");
@@ -7,17 +7,53 @@ function initializeFields() {
     txtAddress = document.getElementById("txt-address");
     cboCar = document.getElementById("cbo-car");
     txtCar = document.getElementById("txt-car");
+    txtEngine = document.getElementById("txt-engine");
     txtApptDate = document.getElementById("txt-appt-date");
     cboMechanic = document.getElementById("cbo-mechanic");
 }
 function applyAppointment() {
+    var fullname = txtName.value;
+    var phone = txtPhone.value;
+    var address = txtAddress.value;
+    var license = txtCar.value;
+    var engine = txtEngine.value;
+    var apptDate = txtApptDate.value;
+    var mechanic = cboMechanic.value;
 
+    var flagAddress = cboAddress.selectedIndex == 0;
+    var flagCar = cboCar.selectedIndex == 0;
+
+    const apptRequest = new XMLHttpRequest();
+    apptRequest.onload = function () {
+        open("index.html", "_self");
+    }
+
+    if (fullname == "" || phone == "" || address == "" || license == "" || engine == "" || cboMechanic.selectedIndex == 0) {
+        alert("All the fields are required");
+        return;
+    }
+
+    apptRequest.open("GET", "insertAppt.php?" +
+        "session_id=" + getCookie("uid") +
+        "&fullname=" + fullname +
+        "&phone=" + phone +
+        "&address=" + address +
+        "&license=" + license +
+        "&engine=" + engine +
+        "&apptDate=" + apptDate +
+        "&mechanic=" + mechanic +
+        "&flagCar=" + flagCar +
+        "&flagAddress=" + flagAddress);
+    apptRequest.send();
 }
 
 function loadMechanics() {
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
+        console.log(this.responseText);
         let mechanics = this.responseText.split("\n");
+
+        for (let i = 1, end = cboMechanic.options.length; i < end; i++) cboMechanic.options.remove(1);
         for (let mechanic_info of mechanics) {
             if (mechanic_info == "") continue;
             mechanic_info = mechanic_info.split("MECSEP");
@@ -26,8 +62,8 @@ function loadMechanics() {
             cboMechanic.add(new Option(mechanic_name, mechanic_id));
         }
     };
-
-    xmlhttp.open("GET", "appt.php?session_id=" + getCookie("uid") + "&mechanic=true");
+    let apptDate = txtApptDate.value;
+    xmlhttp.open("GET", "appt.php?session_id=" + getCookie("uid") + "&mechanic=true&apptDate=" + apptDate);
     xmlhttp.send();
 }
 
@@ -43,6 +79,7 @@ function load() {
         txtPhone.value = rNamePhone[1];
 
         for (let address of rAddress) {
+            if (address == "") continue;
             cboAddress.add(new Option(address));
         }
         cboAddress.onchange = function () {
@@ -64,6 +101,16 @@ function load() {
             engine = car[1];
             cboCar.add(new Option(license, engine));
         }
+
+        cboCar.onchange = function () {
+            if (this.selectedIndex > 0) {
+                txtCar.value = this.selectedOptions[0].text;
+                txtEngine.value = this.value;
+            } else {
+                txtCar.value = "";
+                txtEngine.value = "";
+            }
+        };
 
         txtApptDate.onchange = function () {
             loadMechanics();

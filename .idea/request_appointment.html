@@ -20,8 +20,8 @@
                     <h1>UVL Workshop</h1>
                 </div>
             </li>
-            <li><a href="admin.html" >Mohammad Zulfikar</a></li>
-            <li><a href="login.html">Logout</a></li>
+            <li><a href="" id="logged-username"></a></li>
+            <li><p class="txt-logout" onclick="logout()">Logout</p></li>
         </ul>
     </div>
 
@@ -54,8 +54,8 @@
                 <option>Choose your prefered mechanic</option>
             </select>
             <div class="appt-buttons">
-                <button type="button" onclick="delete_appointment()">Cancel</button>
-                <button type="button" onclick="home()">Apply</button>
+                <button type="button" onclick="home()">Cancel</button>
+                <button type="button" onclick="applyAppointment()">Apply</button>
             </div>
         </div>
     </div>
@@ -63,6 +63,7 @@
 </div>
 <script src="common.js"></script>
 <script src="appt.js"></script>
+<script src="login.js"></script>
 
 </body>
 </html>

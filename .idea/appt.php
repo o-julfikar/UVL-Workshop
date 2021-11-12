@@ -22,16 +22,18 @@
             echo "session expired";
             return;
         } elseif ($get_mechanic == "true") {
+            $apptDate = $_REQUEST["apptDate"];
             $sql_get_mechanic = "SELECT mechanic.mechanic_id, mechanic_name, IFNULL(count, 0) AS count FROM mechanic " .
                                 "LEFT JOIN ( " .
                                 "SELECT  mechanic.mechanic_id, COUNT(*) AS 'count' FROM mechanic " .
 	                            "LEFT JOIN car_has_appointment_with_mechanic " .
 	                            "ON mechanic.mechanic_id = car_has_appointment_with_mechanic.mechanic_id " .
-                                "WHERE appointment_date >= CURRENT_DATE() " .
+                                "WHERE appointment_date = '$apptDate' " .
 	                            "GROUP BY mechanic.mechanic_id) " .
                                 "AS query_helper " .
                                 "ON mechanic.mechanic_id = query_helper.mechanic_id;";
             $result_mechanic = mysqli_query($conn, $sql_get_mechanic);
+
             $mechanics = [];
             if (mysqli_num_rows($result_mechanic) > 0) {
                 while ($row = mysqli_fetch_assoc($result_mechanic)) {
@@ -58,7 +60,9 @@
                 $sql_get_address = "SELECT * FROM address WHERE user_id = $uid;";
                 $result_address = mysqli_query($conn, $sql_get_address);
                 if (mysqli_num_rows($result_address) > 0) {
-                    $addresses[] = mysqli_fetch_assoc($result_address)["address"];
+                    while ($arow = mysqli_fetch_assoc($result_address)) {
+                        $addresses[] = $arow["address"];
+                    }
                 }
                 echo $user_name;
                 echo "\n";
@@ -69,7 +73,7 @@
                     echo "\n";
                 }
                 echo "SPSEPMAZ";
-                $sql_get_cars = "SELECT car_license_number FROM client_owns_car WHERE user_id = $uid;";
+                $sql_get_cars = "SELECT car_license_number FROM client_owns_car WHERE user_id = '$uid';";
                 $result_car = mysqli_query($conn, $sql_get_cars);
                 $cars = [];
                 $engines = [];
@@ -79,10 +83,10 @@
                     }
                 }
                 foreach ($cars as $car) {
-                    $sql_get_engine = "SELECT engine_number FROM car WHERE car_license_number = $car;";
+                    $sql_get_engine = "SELECT engine_number FROM car WHERE car_license_number = '$car';";
                     $result_engine = mysqli_query($conn, $sql_get_engine);
                     if (mysqli_num_rows($result_car) > 0) {
-                        $row = mysqli_fetch_assoc($result_car);
+                        $row = mysqli_fetch_assoc($result_engine);
                         $engines[] = $car . "CARSEP" . $row["engine_number"];
                     }
                 }

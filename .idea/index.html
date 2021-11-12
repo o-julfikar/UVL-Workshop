@@ -20,15 +20,15 @@
                         <h1>UVL Workshop</h1>
                     </div>
                 </li>
-                <li><a href="admin.html" >Mohammad Zulfikar</a></li>
-                <li><a href="login.html">Logout</a></li>
+                <li><a href=""  id="logged-username"></a></li>
+                <li><p class="txt-logout" onclick="logout()">Logout</p></li>
             </ul>
         </div>
 
         <div class="container">
             <div class="sub-container">
                 <div class="appointment-container" id="cont-appt">
-                    <button type="button" class="btn-delete" onclick="delete_appointment()">X</button>
+                    <button type="button" class="btn-delete" onclick="deleteAppointment()">X</button>
                     <table>
                         <thead>
                         <tr>
@@ -38,15 +38,31 @@
                         <tbody>
                         <tr>
                             <td class="appoint-labl">Date</td>
-                            <td class="appoint-val" id="txt-appoint-date">01/01/2022</td>
+                            <td class="appoint-val" id="txt-appoint-date"></td>
+                        </tr>
+                        <tr>
+                            <td class="appoint-labl">Car License Number</td>
+                            <td class="appoint-val" id="txt-licence"></td>
+                        </tr>
+                        <tr>
+                            <td class="appoint-labl">Car Egnine Number</td>
+                            <td class="appoint-val" id="txt-engine"></td>
+                        </tr>
+                        <tr>
+                            <td class="appoint-labl">Address</td>
+                            <td class="appoint-val" id="txt-address"></td>
+                        </tr>
+                        <tr hidden>
+                            <td class="appoint-labl">Mechanic</td>
+                            <td class="appoint-val" id="txt-mechanic-id"></td>
                         </tr>
                         <tr>
                             <td class="appoint-labl">Mechanic</td>
-                            <td class="appoint-val" id="txt-mechanic-name">Abu Hasnayeen Zillanee</td>
+                            <td class="appoint-val" id="txt-mechanic-name"></td>
                         </tr>
                         </tbody>
                     </table>
-                    <button type="button" class="btn-edit" onclick="openAppointmentForm()">Edit</button>
+                    <button type="button" class="btn-edit" onclick="alert('Coming soon...')">Edit</button>
                 </div>
                 <div class="appointment-container-unavailable" id="cont-appt-empty">
                     <p>There are no available appointments</p>
@@ -59,6 +75,8 @@
 
     <script src="common.js"></script>
     <script src="index.js"></script>
+    <script src="login.js"></script>
+
 
 </body>
 </html>

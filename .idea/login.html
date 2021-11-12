@@ -9,15 +9,16 @@
 </head>
 <body>
     <div class="main-container">
-        <div class="logo" onclick="home()">
+        <div class="logo" onclick="">
             <img class="logo-pic" src="logo.png" alt="Logo of UVL Workshop">
             <h1>UVL Workshop</h1>
         </div>
         <div class="container">
             <div class="login-box">
-                <input type="email" placeholder="Email" id="txt-email" autocomplete="email">
+                <input type="email" placeholder="Email" id="txt-email">
+                <input type="password" hidden>
                 <div class="rl-box">
-                    <button type="button" id="btn-go" onclick="checkLogin()">Continue</button>
+                    <button type="submit" id="btn-go" onclick="checkLogin()">Continue</button>
                 </div>
             </div>
         </div>
@@ -25,7 +26,6 @@
 
     <script src="login.js"></script>
     <script src="common.js"></script>
-    <script>getEmailFromURL();</script>
 
 </body>
 </html>

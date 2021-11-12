@@ -17,6 +17,10 @@
     padding: 20px;
 }
 
+.appointment-container table td:first-child {
+    width: 20%;
+}
+
 .btn-delete {
     float: right;
     background: indianred;
