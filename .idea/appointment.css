@@ -3,6 +3,8 @@
     grid-template-columns: auto auto;
     grid-gap: 10px;
     align-items: center;
+    align-self: flex-start;
+    padding: 10px;
 }
 
 .appt-row {

@@ -80,7 +80,8 @@ function load() {
 
         for (let address of rAddress) {
             if (address == "") continue;
-            cboAddress.add(new Option(address));
+            let cont = address.length > 20? "..." : "";
+            cboAddress.add(new Option(address.substring(0, Math.min(20, address.length)) + cont, address));
         }
         cboAddress.onchange = function () {
             if (cboAddress.selectedIndex > 0) {

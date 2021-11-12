@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2021 at 11:02 PM
+-- Generation Time: Nov 12, 2021 at 03:22 AM
 -- Server version: 10.4.16-MariaDB
 -- PHP Version: 7.4.12
 
@@ -38,13 +38,19 @@ CREATE TABLE `address` (
 
 INSERT INTO `address` (`user_id`, `address`) VALUES
 (3, 'Dhaka, Bangladesh'),
-(3, 'Padma City Plaza - 3, 28/ 1 Mahim Ganguli Road, Tan Bazar, Narayanganj Sadar'),
 (6, 'Dhaka, Bangladesh'),
+(7, '66 Mohakhali, Dhaka 1212, Bangladesh'),
 (7, 'Dhaka, Bangladesh'),
+(7, 'Paltan, Bangladesh'),
+(8, 'Mohakhali, Dhaka, Bangladesh'),
 (8, 'Syhlet, Bangladesh'),
+(8, 'Tongi, Bangladesh'),
+(9, 'Dhaka, Bangladesh'),
 (9, 'Khulna, Bangladesh'),
 (10, 'Narayanganj, Bangladesh'),
-(11, 'Dhaka, Bangladesh');
+(11, 'Dhaka, Bangladesh'),
+(12, 'KFC Tuesday Meal, Shanti Nagar, Bangladesh'),
+(12, 'Onnesha, Kingdom of Lazoft');
 
 -- --------------------------------------------------------
 
@@ -62,10 +68,14 @@ CREATE TABLE `car` (
 --
 
 INSERT INTO `car` (`car_license_number`, `engine_number`) VALUES
+('AppleCar424', 'CSE424'),
 ('BENZ321', 'SOC101'),
+('BMW321', 'S7ARL1NK'),
 ('BNGCAR102', 'ENG091'),
+('BRTC321', 'CSE341'),
 ('FERRARI458', 'UVLAF123'),
 ('iCAR421', 'CSE421'),
+('LAZ431', 'CSE431'),
 ('TEST101', 'FER101'),
 ('TOYOTA123', 'NISSAN23');
 
@@ -78,21 +88,29 @@ INSERT INTO `car` (`car_license_number`, `engine_number`) VALUES
 CREATE TABLE `car_has_appointment_with_mechanic` (
   `car_license_number` varchar(100) NOT NULL,
   `mechanic_id` int(11) NOT NULL,
-  `appointment_date` date NOT NULL
+  `appointment_date` date NOT NULL,
+  `address` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `car_has_appointment_with_mechanic`
 --
 
-INSERT INTO `car_has_appointment_with_mechanic` (`car_license_number`, `mechanic_id`, `appointment_date`) VALUES
-('BENZ321', 3, '2021-11-17'),
-('BNGCAR102', 4, '2021-11-14'),
-('FERRARI458', 1, '2021-11-16'),
-('FERRARI458', 3, '2021-11-15'),
-('FERRARI458', 4, '2021-11-14'),
-('iCAR421', 3, '2021-11-14'),
-('TOYOTA123', 0, '2021-11-14');
+INSERT INTO `car_has_appointment_with_mechanic` (`car_license_number`, `mechanic_id`, `appointment_date`, `address`) VALUES
+('AppleCar424', 1, '2021-11-23', 'KFC Tuesday Meal, Shanti Nagar, Bangladesh'),
+('BENZ321', 2, '2021-11-28', 'Dhaka, Bangladesh'),
+('BMW321', 0, '2021-11-27', 'Tongi, Bangladesh'),
+('BNGCAR102', 2, '2021-11-24', 'Syhlet, Bangladesh'),
+('BRTC321', 4, '2021-12-02', 'Paltan, Bangladesh'),
+('FERRARI458', 0, '2021-11-27', 'Dhaka, Bangladesh'),
+('FERRARI458', 1, '2021-11-23', '66 Mohakhali, Dhaka 1212, Bangladesh'),
+('iCAR421', 0, '2021-11-27', 'Dhaka, Bangladesh'),
+('iCAR421', 0, '2022-01-18', 'Dhaka, Bangladesh'),
+('iCAR421', 1, '2021-11-25', 'Dhaka, Bangladesh'),
+('iCAR421', 3, '2021-11-20', 'Dhaka, Bangladesh'),
+('LAZ431', 0, '2021-12-09', 'Onnesha, Kingdom of Lazoft'),
+('TOYOTA123', 0, '2021-11-27', 'Narayanganj, Bangladesh'),
+('TOYOTA123', 2, '2021-11-20', 'Narayanganj, Bangladesh');
 
 -- --------------------------------------------------------
 
@@ -111,11 +129,15 @@ CREATE TABLE `client_owns_car` (
 
 INSERT INTO `client_owns_car` (`user_id`, `car_license_number`) VALUES
 (3, 'TEST101'),
+(7, 'BRTC321'),
 (7, 'FERRARI458'),
+(8, 'BMW321'),
 (8, 'BNGCAR102'),
 (9, 'BENZ321'),
 (10, 'TOYOTA123'),
-(11, 'iCAR421');
+(11, 'iCAR421'),
+(12, 'AppleCar424'),
+(12, 'LAZ431');
 
 -- --------------------------------------------------------
 
@@ -156,22 +178,37 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`user_id`, `session_id`, `session_start`) VALUES
+(3, '2aXueLsfxuTllQWrm3mHKImmf3gQj3', '2021-11-12'),
 (3, '2XztE.kVgFMlICXLokFmAYiguNQxaC', '2021-11-12'),
 (3, '3XzmkgglCZm2llfsmLTtZlscXuzuDW', '2021-11-11'),
+(3, 'cd.mZcDyFlNkzlktMSoAtoW2EXuxvk', '2021-11-12'),
 (3, 'ezWuYDUuDU2YOH3Oc2LcGtIwx3LXgT', '2021-11-12'),
+(3, 'fytjkOHlVKEqfFZGlNrAtihRbOfZKY', '2021-11-12'),
 (3, 'gyqXacluisacrkPefw.N@uBgMXMs@l', '2021-11-12'),
+(3, 'haciaClktsrliRxdoQKBXCaadKjllu', '2021-11-12'),
 (3, 'hAxB3aEttHzrYFRCElXrogyaWtZlPt', '2021-11-11'),
 (3, 'hayihmcNdHaflGrXmTNWGa@.iaP2ry', '2021-11-12'),
 (3, 'kDTfQGbIlOQkmLqtiaXAdc3lcQazgU', '2021-11-12'),
 (3, 'kfumBkaPzamcqkiliEgkQzZoSBHrqm', '2021-11-12'),
 (3, 'khRxwAhisRUVgtBzABBCUdmskxWMTF', '2021-11-11'),
+(3, 'NBfPgltqcBgaa3llrilwlmUbaWcWUW', '2021-11-12'),
+(3, 'nESrXlKYzldukFlerIfaDKbbjtdlmD', '2021-11-12'),
+(3, 'o.aaz2vbrhvgrKgtoRrKF2lSxtHs@r', '2021-11-12'),
 (3, 'oFKMbekiSumujulvxMAWdmGzTOplhW', '2021-11-11'),
 (3, 'OouQmoUuviw2azt2NTaG.tuziqbSim', '2021-11-11'),
+(3, 'Q@eRkHlfmUplQ@AgdifYn2kPgmkMlc', '2021-11-12'),
 (3, 'qUPFEWyIvtqdufragZ@GLoDHoPKaPf', '2021-11-12'),
+(3, 'rafZaqjSrbcvkzQoBlGBF.kHotwuao', '2021-11-12'),
+(3, 'rbaucDRlzqQTVd2ityrpmrSl2cOhzf', '2021-11-12'),
 (3, 'uiqilBuFa2kgbRIo2gogLemG.WonUT', '2021-11-11'),
+(3, 'wDdaPNIoLqzltmKuDXGzeBmjlHFlMS', '2021-11-12'),
+(3, 'wqjmyaoIcaRLFLKezQajlEQgKSflct', '2021-11-12'),
+(3, 'WYPt2ALmlbs@CiPilgyairreaqG3lF', '2021-11-12'),
 (3, 'Zl@HkKYYi2mlDtmhadormYTOtZznbw', '2021-11-11'),
 (3, 'zlTMGilaNTdauPYfjmHTMWwulYMGeD', '2021-11-12'),
+(6, 'dvwsWRLQfZsRvcPmDS6vLmoXLIUoim', '2021-11-12'),
 (6, 'dypcXaaRcUPExddhRVasdzft6gCAoe', '2021-11-12'),
+(7, 'aoOaxeiKPN.wiecoPihjmLhZKmNSTf', '2021-11-12'),
 (7, 'FKueRsZwcWVGPTW7isCrguOlVNsDMa', '2021-11-12'),
 (7, 'gbEhogi@BaRfHlnImmjmIwfxh7sQdl', '2021-11-11'),
 (7, 'icQHtqUfTZpxO7jinSXyyv7ylGnfCh', '2021-11-12'),
@@ -179,13 +216,32 @@ INSERT INTO `sessions` (`user_id`, `session_id`, `session_start`) VALUES
 (7, 'krGe.kaygGyyzcrlQGomSzasrUsRRP', '2021-11-12'),
 (7, 'mPnLkvxsBnoSkwHKhelDfnphsnoHZK', '2021-11-12'),
 (7, 'TwBmjdYhkhyUaHeaMDeTaFQamCaLeE', '2021-11-12'),
+(7, 'VzvVRtbvGjv7MeXlmVwlztMcQZgDPy', '2021-11-12'),
 (7, 'yolGvSGengOeVhanzBcbPbnomHjpch', '2021-11-12'),
+(8, 'cGD8laiBkbBjfogEabfnkmZsrkKObZ', '2021-11-12'),
+(8, 'faaHDmOHncgHxnZEKomIvegOQFaD8f', '2021-11-12'),
+(8, 'ovWYdDoHawkjSvnqmlFfZmyfMwEsRk', '2021-11-12'),
 (8, 'P.cgUHNcglnaLogaPi@TmajDiD@ZTY', '2021-11-12'),
+(8, 'seEswCcaEi88igaiRsTpAfmzbdo.Yc', '2021-11-12'),
+(8, 'silmYdssmdcGHacsNSCkmq@lgVxoBr', '2021-11-12'),
+(8, 'SlxKr.mNtUTEPWIqIFFhmSKSDmnamg', '2021-11-12'),
+(8, 'UIalIXoiggfk@cIdTAif@mtokXBxNX', '2021-11-12'),
 (9, 'MVUlPEmnqialxcTHYmuYmTQTywSaEf', '2021-11-12'),
+(9, 'vptXkwBGngomNt9jwPBkiYEYRbTKpY', '2021-11-12'),
 (10, '0zgPvazXjaEmi1OBYXGlH@1zUcHVCa', '2021-11-12'),
+(10, 'NcSFGZmaVmuoE0OT1pgugsmxzXErvz', '2021-11-12'),
+(10, 'Sibtvmy0oyzFMimt1hmmp0dDmzlTIc', '2021-11-12'),
+(11, 'hIiUkigvngwwp.aOd1iPgYyvR.gXWK', '2021-11-12'),
+(11, 'lTnQyWs1lmfoEnXi@Rmkkims@xogta', '2021-11-12'),
 (11, 'nhAmMpZCAiPNtzlOjmRpyirbtmgjn1', '2021-11-12'),
 (11, 'nmdF1F.Ca@andQjEzPtOapcyrOnAio', '2021-11-12'),
-(11, 'zwiwNvcYopyoqcyTgcxgBleE1N.Yys', '2021-11-12');
+(11, 'womXbn@LPc@tpVHrircmLoon@PI1Gu', '2021-11-12'),
+(11, 'zwiwNvcYopyoqcyTgcxgBleE1N.Yys', '2021-11-12'),
+(12, 'CMQ@ax2EhVOWGZmRhiNqey.@PmeXyN', '2021-11-12'),
+(12, 'PaYomsDzyebzAviqxlLtQaKtr2Gxsv', '2021-11-12'),
+(12, 'SxmlQaliihaVvAG2awWk1sjmoiylal', '2021-11-12'),
+(12, 'szrhtoLuijiolmaUxswgIGDgorybLH', '2021-11-12'),
+(12, 'TmdrcNdlfQlpYboWynagbwVYrKjSoq', '2021-11-12');
 
 -- --------------------------------------------------------
 
@@ -205,13 +261,14 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`user_id`, `user_email`, `user_password`) VALUES
 (1, 'test@gmail.com', '123'),
-(3, 'talk2zulfikar@gmail.com', '1'),
+(3, 'talk2zulfikar@gmail.com', 'CSE391Secret'),
 (6, 'admin@admin.com', 'admin'),
 (7, 'hasnayen@gmail.com', '123'),
 (8, 'afsan@gmail.com', '123'),
 (9, 'sohan@gmail.com', '123'),
 (10, 'imtiyaz@gmail.com', '123'),
-(11, 'tony@gmail.com', '123');
+(11, 'tony@gmail.com', '123'),
+(12, 'shahriyar@gmail.com', 'GB23AwauV8YzB4b');
 
 -- --------------------------------------------------------
 
@@ -237,7 +294,8 @@ INSERT INTO `user_info` (`user_id`, `user_name`, `user_role`, `phone`) VALUES
 (8, 'Afsan Saeed', 1, '0123456789'),
 (9, 'Sohanur Rahman', 1, '01234567890'),
 (10, 'Imtiyaz Bhuiyan', 1, '01234567890'),
-(11, 'Tonny Saha', 1, '01234567890');
+(11, 'Tonny Saha', 1, '01234567890'),
+(12, 'Shahriyar Hossain', 1, '01521570105');
 
 --
 -- Indexes for dumped tables
@@ -302,7 +360,7 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables

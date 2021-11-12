@@ -37,11 +37,11 @@ body {
 }
 
 .container {
-    margin-top: -142px;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    overflow: auto;
 }
 
 .navbar {

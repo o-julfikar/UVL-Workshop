@@ -48,7 +48,7 @@ function getAppointment() {
         let response = this.responseText.split("\n");
         if (response[0] == -1) {
             cont_appt_empty.style.display = "block";
-        } else if (response[0] == "session expired") {
+        } else if (response[0] == "session expired" || response.length < 6) {
             open("login.html", "_self");
         } else {
             cont_appt.style.display = "block";
