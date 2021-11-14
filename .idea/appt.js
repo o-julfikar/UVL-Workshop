@@ -11,6 +11,7 @@ function initializeFields() {
     txtApptDate = document.getElementById("txt-appt-date");
     cboMechanic = document.getElementById("cbo-mechanic");
 }
+
 function applyAppointment() {
     var fullname = txtName.value;
     var phone = txtPhone.value;
@@ -25,7 +26,18 @@ function applyAppointment() {
 
     const apptRequest = new XMLHttpRequest();
     apptRequest.onload = function () {
-        open("index.html", "_self");
+        let response = this.responseText;
+        if (response == "CAREXIST") {
+            alert("The car license you have provided is already owned by someone else. Please try again.")
+        } else if (response.startsWith("APPTEXIST")) {
+            let mechanic = response.split("\n")[1];
+            alert("You already have an appointment with " + mechanic + " on the same date for this car. " +
+                "Please choose a different date or a different car to proceed.")
+        } else if (response == "1") {
+            open("index.html", "_self");
+        } else {
+            alert("An unknow error occured. Please contact the administrator.")
+        }
     }
 
     if (fullname == "" || phone == "" || address == "" || license == "" || engine == "" || cboMechanic.selectedIndex == 0) {

@@ -27,7 +27,7 @@
                 $row = mysqli_fetch_assoc($result_user);
                 $name = $row["user_name"];
                 $role = (int) $row["user_role"];
-                echo $name . "\n" . $role;
+                echo "success" . "\n" . $name . "\n" . $role;
             }
         }
     } else {

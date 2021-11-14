@@ -32,28 +32,32 @@
                     $cars[] = [$row["license"], $row["engine_number"]];
                 }
             }
+            $head = "APPTLIST\n";
+            $sep = "";
+            $apptSep = "APPTSEP";
             foreach ($cars as $car) {
                 $sql_get_appt = "SELECT * FROM car_has_appointment_with_mechanic WHERE car_license_number = '$car[0]';";
                 $result_appt = mysqli_query($conn, $sql_get_appt);
                 if (mysqli_num_rows($result_appt) > 0) {
-                    $row = mysqli_fetch_assoc($result_appt);
-                    $mechanic_id = $row["mechanic_id"];
-                    $appt_date = $row["appointment_date"];
-                    $appt_address = $row["address"];
-                    $appt_date = strtotime($appt_date);
-                    if ($appt_date >= $current_date) {
-                        $sql_get_mechanic = "SELECT * FROM mechanic WHERE mechanic_id = $mechanic_id";
-                        $result_mechanic = mysqli_query($conn, $sql_get_mechanic);
-                        if (mysqli_num_rows($result_mechanic) > 0) {
-                            $mechanic_name = mysqli_fetch_assoc($result_mechanic)["mechanic_name"];
-                            echo $mechanic_id . "\n" . date("d/m/Y", $appt_date) . "\n" .
-                                $car[0] . "\n" . $car[1] . "\n" . $appt_address . "\n" . $mechanic_name;
-                            return;
+                    while ($row = mysqli_fetch_assoc($result_appt)) {
+                        $mechanic_id = $row["mechanic_id"];
+                        $appt_date = $row["appointment_date"];
+                        $appt_address = $row["address"];
+                        $appt_date = strtotime($appt_date);
+                        if ($appt_date >= $current_date) {
+                            $sql_get_mechanic = "SELECT * FROM mechanic WHERE mechanic_id = $mechanic_id";
+                            $result_mechanic = mysqli_query($conn, $sql_get_mechanic);
+                            if (mysqli_num_rows($result_mechanic) > 0) {
+                                $mechanic_name = mysqli_fetch_assoc($result_mechanic)["mechanic_name"];
+                                echo $head . $sep . date("d/m/Y", $appt_date) . $apptSep . $car[0] . $apptSep . $car[1] . $apptSep .
+                                    $appt_address . $apptSep . $mechanic_id . $apptSep . $mechanic_name;
+                                $sep = "\n";
+                                $head = "";
+                            }
                         }
                     }
                 }
             }
-            echo -1;
         }
     } else {
         echo "session expired";

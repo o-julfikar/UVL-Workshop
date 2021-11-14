@@ -6,7 +6,6 @@
     <link rel="icon" href="logo.ico" sizes="16x16">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="index.css">
-    <script src="verify_login.js"></script>
 </head>
 <body>
 
@@ -20,54 +19,16 @@
                         <h1>UVL Workshop</h1>
                     </div>
                 </li>
-                <li><a href=""  id="logged-username"></a></li>
+                <li><a href="request_appointment.html"  >New Appointment</a></li>
+                <li><p>|</p></li>
+                <li><a href="#"  id="logged-username"></a></li>
                 <li><p class="txt-logout" onclick="logout()">Logout</p></li>
             </ul>
         </div>
 
         <div class="container">
-            <div class="sub-container">
-                <div class="appointment-container" id="cont-appt">
-                    <button type="button" class="btn-delete" onclick="deleteAppointment()">X</button>
-                    <table>
-                        <thead>
-                        <tr>
-                            <td colspan="2">Appointment</td>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td class="appoint-labl">Date</td>
-                            <td class="appoint-val" id="txt-appoint-date"></td>
-                        </tr>
-                        <tr>
-                            <td class="appoint-labl">Car License Number</td>
-                            <td class="appoint-val" id="txt-licence"></td>
-                        </tr>
-                        <tr>
-                            <td class="appoint-labl">Car Egnine Number</td>
-                            <td class="appoint-val" id="txt-engine"></td>
-                        </tr>
-                        <tr>
-                            <td class="appoint-labl">Address</td>
-                            <td class="appoint-val" id="txt-address"></td>
-                        </tr>
-                        <tr hidden>
-                            <td class="appoint-labl">Mechanic</td>
-                            <td class="appoint-val" id="txt-mechanic-id"></td>
-                        </tr>
-                        <tr>
-                            <td class="appoint-labl">Mechanic</td>
-                            <td class="appoint-val" id="txt-mechanic-name"></td>
-                        </tr>
-                        </tbody>
-                    </table>
-                    <button type="button" class="btn-edit" onclick="alert('Coming soon...')">Edit</button>
-                </div>
-                <div class="appointment-container-unavailable" id="cont-appt-empty">
-                    <p>There are no available appointments</p>
-                    <button type="button" class="btn-edit" onclick="openAppointmentForm()">Request for new appointment</button>
-                </div>
+            <div class="sub-container" id="sub-container">
+
             </div>
         </div>
 
@@ -76,6 +37,7 @@
     <script src="common.js"></script>
     <script src="index.js"></script>
     <script src="login.js"></script>
+    <script src="verify_login.js"></script>
 
 
 </body>

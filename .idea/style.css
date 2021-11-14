@@ -9,6 +9,8 @@ body {
 }
 
 .main-container {
+    margin: 0px;
+    padding: 0px;
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -47,6 +49,7 @@ body {
 .navbar {
     /*background: seagreen;*/
     z-index: 1;
+    opacity: 90%;
 }
 
 .navbar ul {
@@ -70,7 +73,7 @@ body {
 }
 
 .navbar ul li a,
-.txt-logout {
+.navbar ul li p {
     text-decoration: none;
     color: black;
     font-size: x-large;
@@ -79,7 +82,7 @@ body {
 }
 
 .navbar ul li a:hover,
-.txt-logout:hover {
+.navbar ul li p:hover {
     color: mediumseagreen;
     cursor: pointer;
 }

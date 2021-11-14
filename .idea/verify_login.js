@@ -12,12 +12,13 @@ function getCookie(key) {
 function verifySession() {
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
-        if (this.responseText == "session expired") {
-            open("login.html", "_self");
-        } else {
+        let response = this.responseText.split("\n");
+        if (response[0] == "success") {
             let user_info = this.responseText.split("\n");
             var logged_username = document.getElementById("logged-username");
-            logged_username.innerHTML = user_info[0];
+            logged_username.innerHTML = user_info[1];
+        } else {
+            open("login.html", "_self");
         }
     };
 

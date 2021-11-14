@@ -121,13 +121,13 @@ function loadData() {
 function verifyAdmin() {
     const xmlhttp = new XMLHttpRequest();
     xmlhttp.onload = function () {
-        if (this.responseText == "session expired") {
-            open("login.html", "_self");
-        } else {
-            let user_info = this.responseText.split("\n");
-            if (user_info[1] != '0') {
+        let response = this.responseText.split("\n");
+        if (response[0] == "success") {
+            if (response[2] != '0') {
                 open("index.html", "_self");
             }
+        } else {
+            open("login.html", "_self");
         }
     };
 
